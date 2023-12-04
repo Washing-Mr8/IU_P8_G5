@@ -34,7 +34,7 @@ function send() {
           data-bs-toggle="button" 
           class="input-group-text btn btn-outline-secondary b-avanzada"
           @click="{ advSearch = !advSearch; send()}" 
-          title="Búsqueda avanzada">⚙️</button>
+          title="Búsqueda avanzada">⚙️</button> <!--Hay que cambiar este icono-->
       </div>
     </div>
     <div class="col-auto">
