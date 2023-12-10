@@ -149,17 +149,17 @@ const switchGroups = (vmId) => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#div-groups">Grupos</a>
+          <a class="nav-link active" aria-current="page" href="#div-groups" title="Ir a la sección de Grupos">Grupos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#div-vms">Vms</a>
+          <a class="nav-link active" aria-current="page" href="#div-vms" title="Ir a la sección de Máquinas Virtuales">Vms</a>
         </li>
         </ul>        
           <div class="nav-item ms-auto">
             <div class="btn-group">
-              <button id="save" class="btn btn-outline-secondary">💾</button>
-              <button id="clean" class="btn btn-outline-secondary">🧽</button>
-              <button id="restore" class="btn btn-outline-secondary">↩️</button>
+              <button id="save" class="btn btn-outline-secondary" title="Guardar">💾</button>
+              <button id="clean" class="btn btn-outline-secondary" title="Limpiar">🧽</button>
+              <button id="restore" class="btn btn-outline-secondary" title="Restaurar">↩️</button>
             </div>
           </div>
       </div>

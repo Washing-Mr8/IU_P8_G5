@@ -70,11 +70,20 @@ function capitalize(str) {
             <span class="name">{{entry[key]}}</span>
           </template>
           <template v-else-if="Array.isArray(entry[key])">
-            {{entry[key].map(v => resolve(v).name).join(", ")}}
-          </template>
-          <template v-else>
-            {{entry[key]}}
-          </template>
+  <span>
+    <span v-for="(item, index) in entry[key].slice(0, 4)" :key="index" 
+      style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem; margin-right: 5px;"
+      :title="resolve(item).name">
+      {{ resolve(item).name }}
+    </span>
+    <span v-if="entry[key].length > 4" 
+      style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem;"
+      :title="entry[key].slice(4).map(item => resolve(item).name).join(', ')">
+      +{{ entry[key].length - 4 }}
+    </span>
+  </span>
+</template>
+
         </td>
       </tr>
     </tbody>
@@ -100,4 +109,6 @@ thead>tr {
   border-bottom: 1px solid gray;
   color: rgb(104, 103, 103);
 }
+
+
 </style>
