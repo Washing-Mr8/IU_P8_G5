@@ -66,14 +66,15 @@ function list(state) {
     </table>
   
     <h5>Acciones</h5>
-    <div class="btn-group">
-  <button @click="$emit('editVm')" class="btn btn-outline-success" title="Editar Máquina Virtual">✏️</button>
+<div class="btn-group">
+  <button @click="$emit('editVm')" class="btn btn-outline-success" title="Editar Máquina Virtual" :disabled="element.state === VmState.RUNNING  || element.state === VmState.SUSPENDED">✏️</button>
   <button v-if="element.groups.length" class="btn btn-outline-warning" @click="$emit('filterVm')" title="Filtrar Máquina Virtual">🔬</button>
-  <button v-if="element.state != VmState.RUNNING" class="btn btn-outline-secondary" @click="$emit('setState', VmState.RUNNING)" title="Iniciar Máquina Virtual">▶</button>
-  <button v-if="element.state != VmState.SUSPENDED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.SUSPENDED)" title="Suspender Máquina Virtual">💤</button>
-  <button v-if="element.state != VmState.STOPPED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.STOPPED)" title="Detener Máquina Virtual">🛑</button>
-  <button @click="$emit('rmVm')" class="btn btn-outline-danger" title="Eliminar Máquina Virtual">🗑️</button>
-  </div>
+  <button v-if="element.state !== VmState.RUNNING" class="btn btn-outline-secondary" @click="$emit('setState', VmState.RUNNING)" title="Iniciar Máquina Virtual">▶</button>
+  <button v-if="element.state !== VmState.SUSPENDED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.SUSPENDED)" title="Suspender Máquina Virtual">💤</button>
+  <button v-if="element.state !== VmState.STOPPED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.STOPPED)" title="Detener Máquina Virtual">🛑</button>
+  <button @click="confirmDeleteVm" class="btn btn-outline-danger" title="Eliminar Máquina Virtual">🗑️</button>
+</div>
+
 
 
     </div>
@@ -108,12 +109,38 @@ function list(state) {
 
     <h5>Acciones</h5>
     <div class="btn-group">
-      <button @click="$emit('editGroup')" class="btn btn-outline-success">✏️</button>
-      <button @click="$emit('filterGroup')" class="btn btn-outline-warning">🔬</button>
-      <button @click="$emit('rmGroup')" class="btn btn-outline-danger">🗑️</button>
+      <button @click="$emit('editGroup')" class="btn btn-outline-success" title="Editar Grupo">✏️</button>
+      <button @click="$emit('filterGroup')" class="btn btn-outline-warning" title="Filtrar Grupo">🔬</button>
+      <button @click="confirmDeleteG" class="btn btn-outline-danger" title="Eliminar Grupo">🗑️</button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    confirmDeleteVm() {
+      const confirmed = window.confirm('¿Estás seguro de que deseas eliminar esta máquina?');
+
+      if (confirmed) {
+        // Emitir el evento para eliminar el grupo
+        this.$emit('rmVM');
+      }
+    },
+    confirmDeleteG() {
+      const confirmed = window.confirm('¿Estás seguro de que deseas eliminar este Grupo?');
+
+      if (confirmed) {
+        // Emitir el evento para eliminar el grupo
+        this.$emit('rmGroup');
+      }
+    }
+  }
+  
+};
+</script>
+
+
 
 <style scoped>
   tr>th {
