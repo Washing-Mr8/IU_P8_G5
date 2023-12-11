@@ -1,5 +1,5 @@
 <script setup>
-import { resolve, VmState } from '../model.js'
+import { resolve, VmState, turnOnAll, turnOffAll } from '../model.js'
 
 defineEmits(['editVm', 'filterVm', 'rmVm', 'editGroup', 'filterGroup', 'rmGroup', 'setState'])
 
@@ -112,6 +112,9 @@ function list(state) {
       <button @click="$emit('editGroup')" class="btn btn-outline-success" title="Editar Grupo">✏️</button>
       <button @click="$emit('filterGroup')" class="btn btn-outline-warning" title="Filtrar Grupo">🔬</button>
       <button @click="confirmDeleteG" class="btn btn-outline-danger" title="Eliminar Grupo">🗑️</button>
+      <button @click="turnOnAllMachines" class="btn btn-outline-success" title="Encender todas las maquinas del grupo">▶</button>
+      <button @click="turnOffAllMachines" class="btn btn-outline-danger" title="Apagar todas las maquinas del grupo">🛑</button>
+      
     </div>
   </div>
 </template>
@@ -134,6 +137,19 @@ export default {
         // Emitir el evento para eliminar el grupo
         this.$emit('rmGroup');
       }
+    },
+    turnOnAllMachines(){
+
+      turnOnAll(this.element.id);
+      this.$forceUpdate();
+
+    },
+  
+    turnOffAllMachines(){
+
+      turnOffAll(this.element.id);
+      this.$forceUpdate();
+
     }
   }
   

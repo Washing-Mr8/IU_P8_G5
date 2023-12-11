@@ -432,6 +432,40 @@ function addGroup(g) {
     return newGroup;
 }
 
+
+/**
+ * Enciende todas las máquinas virtuales de un grupo.
+ * @param {number} groupId - ID del grupo.
+ */
+function turnOnAll(groupId) {
+    const group = resolve(groupId);
+    if (!group || !Array.isArray(group.members)) {
+      throw new Error(`Invalid group ID: ${groupId}`);
+    }
+  
+    group.members.forEach(vmId => {
+      const vm = resolve(vmId);
+      if (vm && vm.state !== VmState.RUNNING) {
+        setVm({ ...vm, state: VmState.RUNNING });
+      }
+    });
+  }
+  
+
+  function turnOffAll(groupId) {
+    const group = resolve(groupId);
+    if (!group || !Array.isArray(group.members)) {
+      throw new Error(`Invalid group ID: ${groupId}`);
+    }
+  
+    group.members.forEach(vmId => {
+      const vm = resolve(vmId);
+      if (vm && vm.state !== VmState.STOPPED) {
+        setVm({ ...vm, state: VmState.STOPPED });
+      }
+    });
+  }
+
 // cosas que estarán disponibles desde fuera de este módulo
 // todo lo que NO se mencione aquí es privado (= inaccesible) desde fuera
 // podríamos haber evitado esto añadiendo `export` a todas las funciones "públicas"
@@ -466,6 +500,8 @@ export {
     addGroup,
     setGroup,
     rmGroup,
+    turnOnAll,
+    turnOffAll,
     
     // general
     init, // inicializa el estado; llama para no operar con un modelo vacío
