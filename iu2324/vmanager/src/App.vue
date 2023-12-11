@@ -270,7 +270,8 @@ const switchGroups = (vmId) => {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  color: #ecf0f1; /* Cambia el color del texto en modo oscuro por defecto */
+  background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
 }
 .escape {
   font-size: 150%;
