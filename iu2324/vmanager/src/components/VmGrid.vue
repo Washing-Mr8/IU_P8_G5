@@ -70,20 +70,22 @@ function capitalize(str) {
             <span class="name">{{entry[key]}}</span>
           </template>
           <template v-else-if="Array.isArray(entry[key])">
-  <span>
-    <span v-for="(item, index) in entry[key].slice(0, 4)" :key="index" 
-      style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem; margin-right: 5px;"
-      :title="resolve(item).name">
-      {{ resolve(item).name }}
-    </span>
-    <span v-if="entry[key].length > 4" 
-      style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem;"
-      :title="entry[key].slice(4).map(item => resolve(item).name).join(', ')">
-      +{{ entry[key].length - 4 }}
-    </span>
-  </span>
-</template>
-
+            <span>
+              <span v-for="(item, index) in entry[key].slice(0, 4)" :key="index" 
+                style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem; margin-right: 5px;"
+                  :title="resolve(item).name">
+                   {{ resolve(item).name }}
+              </span>
+              <span v-if="entry[key].length > 4" 
+                style="background-color: #6c757d; color: #fff; padding: 0.3em 0.6em; border-radius: 0.25rem;"
+                   :title="entry[key].slice(4).map(item => resolve(item).name).join(', ')">
+                  +{{ entry[key].length - 4 }}
+              </span>
+            </span>
+          </template>
+          <template v-else>
+            {{entry[key]}}
+          </template>
         </td>
       </tr>
     </tbody>
