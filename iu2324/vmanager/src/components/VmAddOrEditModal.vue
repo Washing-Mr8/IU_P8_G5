@@ -76,14 +76,71 @@ defineExpose({ show });
           <TextBox :start="vm.name" id="e-name" label="nombre" />
           <MemberBox :start="vm.groups" :all="M.getGroups()" id="e-groups" label="grupos" />
           <br>
-          <RangeBox :start="vm.ram" id="e-ram" label="ram" :min="0" :max="128" units="Gb" />
-          <RangeBox :start="vm.hd" id="e-hdd" label="hdd" :min="0" :max="4 * 1024" :step="256" units="Gb" />
-          <RangeBox :start="vm.cpu" id="e-cpu" label="cpu" :min="0" :max="100" units="%" />
-          <RangeBox :start="vm.cores" id="e-cores" label="cores" :min="1" :max="8" units="#" />
-          <br>
-          <IpBox :start="vm.ip" id="e-ip" label="ip" />
-          <RangeBox :start="vm.up" id="e-up" label="up" :min="0" :max="1024 * 20" units="Kbps" />
-          <RangeBox :start="vm.down" id="e-down" label="down" :min="0" :max="1024 * 20" units="Kbps" />
+         
+        <div id="e-ram">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-ram" label="ram" :min="0" :max="128" />
+            </div>
+          </div>
+            <span class="units">Gb</span>
+        </div>
+
+        <div id="e-hdd">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-hdd" label="hdd" :min="0" :max="4 * 1024" :step="256" />
+            </div>
+          </div>
+            <span class="units">Gb</span>
+        </div>
+
+        <div id="e-cpu">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-cpu" label="cpu" :min="0" :max="100"  />
+            </div>
+          </div>
+            <span class="units">%   </span>
+        </div>
+
+        <div id="e-cores">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-cores" label="cores" :min="1" :max="8"  />
+            </div>
+          </div>
+            <span class="units">#</span>
+        </div>
+
+         
+  
+          
+        <br>
+        <div id="e-ip">
+        <IpBox :start="vm.ip" id="e-ip"  />
+
+        <span class="units">ip</span>
+        </div>
+          
+
+          <div id="e-up">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-up" label="up" :min="0" :max="1024 * 20"  />
+            </div>
+          </div>
+            <span class="units">Kbps</span>
+        </div>
+        <div id="e-down">
+          <div class="range-box-container">
+            <div class="range-box">
+              <RangeBox :start="vm.ram" id="e-down" label="down" :min="0" :max="1024 * 20"  />
+            </div>
+          </div>
+            <span class="units">Kbps</span>
+        </div>
+         
           <br>
           <SelectBox :start="vm.iso" :all="M.getFiles()" id="e-iso" label="Fichero ISO" />
         </div>
@@ -99,4 +156,99 @@ defineExpose({ show });
 </template>
 
 <style scoped>
+
+
+#e-ip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+#e-ram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #e-ram .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+
+  #e-ram .label {
+    margin-right: 5px;
+  }
+
+  #e-hdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #e-hdd .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+  #e-hdd .label {
+    margin-right: 5px;
+  }
+
+  #e-cpu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #e-cpu .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+  #e-cpu .label {
+    margin-right: 5px;
+  }
+  #e-cores {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #e-cores .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+  #e-cores .label {
+    margin-right: 5px;
+  }
+
+  #e-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #e-up .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+  #e-up .label {
+    margin-right: 5px;
+  }
+
+  #e-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #e-down .range-box-container {
+    margin-right: 10px; /* Ajusta según sea necesario */
+    align-items: center;
+  }
+  #e-down .label {
+    margin-right: 5px;
+  }
+  .range-box {
+    width: 300px; /* Ajusta el ancho según sea necesario */
+    background-color: #e0e0e0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  
 </style>
