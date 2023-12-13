@@ -143,6 +143,7 @@ defineExpose({ show });
          
           <br>
           <SelectBox :start="vm.iso" :all="M.getFiles()" id="e-iso" label="Fichero ISO" />
+        
         </div>
         <button type="submit" class="invisible">Submit</button>
       </form>
@@ -168,6 +169,7 @@ defineExpose({ show });
     display: flex;
     align-items: center;
     justify-content: center;
+    
   }
 
   #e-ram .range-box-container {
@@ -175,8 +177,11 @@ defineExpose({ show });
     align-items: center;
   }
 
+
+
   #e-ram .label {
     margin-right: 5px;
+
   }
 
   #e-hdd {
@@ -204,6 +209,7 @@ defineExpose({ show });
   #e-cpu .label {
     margin-right: 5px;
   }
+ 
   #e-cores {
     display: flex;
     align-items: center;
@@ -216,6 +222,7 @@ defineExpose({ show });
   #e-cores .label {
     margin-right: 5px;
   }
+ 
 
   #e-up {
     display: flex;
@@ -230,6 +237,7 @@ defineExpose({ show });
     margin-right: 5px;
   }
 
+ 
   #e-down {
     display: flex;
     align-items: center;
@@ -242,12 +250,14 @@ defineExpose({ show });
   #e-down .label {
     margin-right: 5px;
   }
+
   .range-box {
     width: 300px; /* Ajusta el ancho según sea necesario */
-    background-color: #e0e0e0;
+    background-color: #141c24;
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
+    align-items: center;
   }
   
   #editOrAddVm{
