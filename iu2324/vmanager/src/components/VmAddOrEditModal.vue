@@ -177,11 +177,8 @@ defineExpose({ show });
     align-items: center;
   }
 
-
-
   #e-ram .label {
     margin-right: 5px;
-
   }
 
   #e-hdd {

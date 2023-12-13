@@ -155,13 +155,6 @@ const switchGroups = (vmId) => {
           <a id="vms" class="nav-link active" aria-current="page" href="#div-vms" title="Ir a la sección de Máquinas Virtuales">Vms</a>
         </li>
         </ul>        
-          <div class="nav-item ms-auto">
-            <div class="btn-group">
-              <button id="save" class="btn btn-outline-secondary" title="Guardar">💾</button>
-              <button id="clean" class="btn btn-outline-secondary" title="Limpiar">🧽</button>
-              <button id="restore" class="btn btn-outline-secondary" title="Restaurar">↩️</button>
-            </div>
-          </div>
       </div>
     </div>
   </nav>
@@ -270,20 +263,20 @@ const switchGroups = (vmId) => {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #ecf0f1; /* Cambia el color del texto en modo oscuro por defecto */
+  color: #e1ff00; /* Cambia el color del texto en modo oscuro por defecto */
   background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
 }
 
 .navbar-brand{
-  color:#ecf0f1
+  color:#e1ff00
 }
 
 #grupos{
-  color:#ecf0f1;
+  color:#e1ff00;
 }
 
 #vms{
-  color:#ecf0f1;
+  color:#e1ff00;
 }
 
 .escape {
