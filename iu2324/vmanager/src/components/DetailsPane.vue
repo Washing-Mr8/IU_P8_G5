@@ -141,14 +141,14 @@ export default {
     turnOnAllMachines(){
 
       turnOnAll(this.element.id);
-      this.$forceUpdate();
+      this.$forceUpdate(); //Asi no se hace, pero funciona
 
     },
   
     turnOffAllMachines(){
 
       turnOffAll(this.element.id);
-      this.$forceUpdate();
+      this.$forceUpdate(); //Asi no se hace, pero funciona
 
     }
   }

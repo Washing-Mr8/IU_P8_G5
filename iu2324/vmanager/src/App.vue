@@ -149,10 +149,10 @@ const switchGroups = (vmId) => {
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#div-groups" title="Ir a la sección de Grupos">Grupos</a>
+          <a id="grupos" class="nav-link active" aria-current="page" href="#div-groups" title="Ir a la sección de Grupos">Grupos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#div-vms" title="Ir a la sección de Máquinas Virtuales">Vms</a>
+          <a id="vms" class="nav-link active" aria-current="page" href="#div-vms" title="Ir a la sección de Máquinas Virtuales">Vms</a>
         </li>
         </ul>        
           <div class="nav-item ms-auto">
@@ -273,6 +273,19 @@ const switchGroups = (vmId) => {
   color: #ecf0f1; /* Cambia el color del texto en modo oscuro por defecto */
   background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
 }
+
+.navbar-brand{
+  color:#ecf0f1
+}
+
+#grupos{
+  color:#ecf0f1;
+}
+
+#vms{
+  color:#ecf0f1;
+}
+
 .escape {
   font-size: 150%;
   padding-right: 1em;

@@ -49,4 +49,15 @@ defineExpose({ show: _show, hide: _hide });
 </template>
 
 <style scoped>
+
+.modal-content{
+  background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
+
+}
+
+.modal-header{
+  background-color: #141c24;
+}
+
+
 </style>

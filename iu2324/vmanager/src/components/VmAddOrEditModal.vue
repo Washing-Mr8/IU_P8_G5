@@ -249,6 +249,11 @@ defineExpose({ show });
     padding: 10px;
     border-radius: 5px;
   }
+  
+  #editOrAddVm{
+     /* Cambia el color del texto en modo oscuro por defecto */
+    background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
+  }
 
   
 </style>

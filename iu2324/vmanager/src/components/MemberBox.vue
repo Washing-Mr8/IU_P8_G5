@@ -55,5 +55,8 @@ const read = computed(() => {
 .caja {
   display: inline-block;
   padding: 2px;
+  color: #ecf0f1; /* Cambia el color del texto en modo oscuro por defecto */
+  background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
+  
 }
 </style>
