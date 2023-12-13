@@ -69,7 +69,7 @@ function list(state) {
 <div class="btn-group">
   <button @click="$emit('editVm')" class="btn btn-outline-success" title="Editar Máquina Virtual" :disabled="element.state === VmState.RUNNING  || element.state === VmState.SUSPENDED">✏️</button>
   <button v-if="element.groups.length" class="btn btn-outline-warning" @click="$emit('filterVm')" title="Filtrar Máquina Virtual">🔬</button>
-  <button v-if="element.state !== VmState.RUNNING" class="btn btn-outline-secondary" @click="$emit('setState', VmState.RUNNING)" title="Iniciar Máquina Virtual">▶</button>
+  <button v-if="element.state !== VmState.RUNNING" class="btn btn-outline-success" @click="$emit('setState', VmState.RUNNING)" title="Iniciar Máquina Virtual">▶</button>
   <button v-if="element.state !== VmState.SUSPENDED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.SUSPENDED)" title="Suspender Máquina Virtual">💤</button>
   <button v-if="element.state !== VmState.STOPPED" class="btn btn-outline-secondary" @click="$emit('setState', VmState.STOPPED)" title="Detener Máquina Virtual">🛑</button>
   <button @click="confirmDeleteVm" class="btn btn-outline-danger" title="Eliminar Máquina Virtual">🗑️</button>
