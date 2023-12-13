@@ -263,20 +263,20 @@ const switchGroups = (vmId) => {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #e1ff00; /* Cambia el color del texto en modo oscuro por defecto */
+  color: #ecf0f1; /* Cambia el color del texto en modo oscuro por defecto */
   background-color: #141c24; /* Cambia el fondo a un tono oscuro por defecto */
 }
 
 .navbar-brand{
-  color:#e1ff00
+  color:#ecf0f1
 }
 
 #grupos{
-  color:#e1ff00;
+  color:#ecf0f1;
 }
 
 #vms{
-  color:#e1ff00;
+  color:#ecf0f1;
 }
 
 .escape {
