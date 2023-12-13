@@ -50,7 +50,7 @@ const read = computed(() => {
 
 <style scoped>
 .exists {
-  background-color: lightblue;
+  background-color: #51084c;
 }
 .caja {
   display: inline-block;

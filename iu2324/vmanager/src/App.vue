@@ -155,13 +155,6 @@ const switchGroups = (vmId) => {
           <a id="vms" class="nav-link active" aria-current="page" href="#div-vms" title="Ir a la sección de Máquinas Virtuales">Vms</a>
         </li>
         </ul>        
-          <div class="nav-item ms-auto">
-            <div class="btn-group">
-              <button id="save" class="btn btn-outline-secondary" title="Guardar">💾</button>
-              <button id="clean" class="btn btn-outline-secondary" title="Limpiar">🧽</button>
-              <button id="restore" class="btn btn-outline-secondary" title="Restaurar">↩️</button>
-            </div>
-          </div>
       </div>
     </div>
   </nav>

@@ -92,17 +92,17 @@ function list(state) {
       </tr>
       <tr>
         <th>Encendidas</th>
-        <td v-if="list(VmState.RUNNING).length">{{ list(VmState.RUNNING) }}</td>
+        <td v-if="list(VmState.RUNNING).length" style="color: green;">{{ list(VmState.RUNNING) }}</td>
         <td v-else> (no hay) </td>
       </tr>
       <tr>
         <th>Suspendidas</th>
-        <td v-if="list(VmState.SUSPENDED).length">{{ list(VmState.SUSPENDED) }}</td>
+        <td v-if="list(VmState.SUSPENDED).length" style="color: orange;">{{ list(VmState.SUSPENDED) }}</td>
         <td v-else> (no hay) </td>
       </tr>
       <tr>
         <th>Apagadas</th>
-        <td v-if="list(VmState.STOPPED).length">{{ list(VmState.STOPPED) }}</td>
+        <td v-if="list(VmState.STOPPED).length" style="color: red;">{{ list(VmState.STOPPED) }}</td>
         <td v-else> (no hay) </td>
       </tr>
     </table>
